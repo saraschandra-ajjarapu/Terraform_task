@@ -1,4 +1,4 @@
-# terraform_task
+# Terraform_task
 
 DevOps assignment
 Instructions
