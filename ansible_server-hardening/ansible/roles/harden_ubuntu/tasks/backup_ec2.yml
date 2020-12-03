@@ -1,0 +1,10 @@
+- name: run cmd
+  command: curl http://169.254.169.254/latest/meta-data/instance-id
+  register: instance_id
+
+- name: copy the output to a local file
+  copy:
+    content: |
+          "{{ instance_id.stdout }}"
+    dest: "~/ansible/playbooks/Instance_ID"
+  delegate_to: localhost

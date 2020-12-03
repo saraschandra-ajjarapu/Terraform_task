@@ -1,0 +1,36 @@
+### tcp 943, udp 1194 opened for OPENVPN ####
+- name: Install ufw
+  action: apt pkg=ufw state=present
+
+- name: ufw - enable IN tcp proto on ssh from any host/port
+  ufw:
+    rule: allow
+    port: '{{ item }}'
+    proto: tcp
+  loop:
+    - 80
+    - 5555 #non-standard ssh port
+    - 943
+    - 443                           
+
+- name: ufw - enable IN udp proto on ssh from any host/port
+  ufw:
+    rule: allow
+    port: '{{ item }}'
+    proto: udp
+  loop:
+    - 1194
+
+- name: ufw - disable IN on all other ports from any host/port
+  ufw:
+    direction: in
+    rule: deny
+
+- name: ufw - enable OUT on all other ports to any host/port
+  ufw:
+    direction: out
+    rule: allow
+
+- name: ufw - reload
+  ufw:
+    state: reloaded

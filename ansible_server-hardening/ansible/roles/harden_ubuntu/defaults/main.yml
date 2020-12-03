@@ -1,0 +1,15 @@
+---
+enable_auto_update: True
+enable_fail2ban: True
+enable_ufw: True
+
+add_deployment_user: True
+deployment_user: saras
+deployment_group: saras
+
+enable_stop_password_authentication: True
+enable_stop_root_login: True
+change_ssh_default_port: True
+calmAv_enable: False
+backup_ec2: False
+
