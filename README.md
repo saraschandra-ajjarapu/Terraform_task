@@ -1,7 +1,5 @@
 # terraform_task
 
-   ELTROPY DEVOPS ASSIGNMENT
-
 DevOps assignment
 Instructions
 1.	This is an assignment to test your skills to setup server infrastructure on AWS cloud
@@ -25,6 +23,7 @@ Detailed Assignment
 8.	Backup
 1.	Enable backup for instances
 Architecture: 
+
 
 
 AWS Services:  VPC, EC2, S3, CloudWatch, SNS, SQS, NAT gateway
